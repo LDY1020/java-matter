@@ -1,30 +1,32 @@
-package 참조형;
+package 객체지향;
 
-public class MemberMain {
+public class MemberMain{
     public static void main(String[] args) {
-        Member[] member = new Member[3];
+        Member[] m = new Member[3];
 
-        member[0] = createMember("도윤" , 27 , "남자");
-        member[1] = createMember("철수" , 20 , "남자");
-        member[2] = createMember("유리" , 23 , "여자");
+        m[0] = new Member();
+        m[0].name = "이도윤";
+        m[0].age = 27;
+        m[0].registration = 3;
+        m[0].info();
 
-        printMembers(member);
-        System.out.println("총 회원수 :" + getMemberCount(member));
-    }
+        m[1] = new Member();
+        m[1].name = "홍길동";
+        m[1].age = 24;
+        m[1].registration = 2;
+        m[1].info();
 
-    static Member createMember(String name , int age , String gender){
-        Member m = new Member();
-        m.name = name;
-        m.age = age;
-        m.gender = gender;
-        return m;
-    }
-    static void printMembers(Member[] members){
-        for (Member member : members) {
-            System.out.println("이름:" + member.name + " 나이:" + member.age + " 성별:" + member.gender);
+        m[2] = new Member();
+        m[2].name = "이순신";
+        m[2].age = 23;
+        m[2].registration = 1;
+        m[2].info();
+
+        for(int i = 0 ; i < 3; i++){
+            if(m[i].registration >= 3){
+                System.out.println("등록된 사람:" + m[i].name);
+            }
         }
-    }
-    static int getMemberCount(Member[] members){
-        return members.length;
+
     }
 }
