@@ -1,30 +1,33 @@
-package 참조형;
-
-import java.io.OptionalDataException;
+package 생성자;
 
 public class BookMain {
     public static void main(String[] args) {
-        Book[] b = new Book[3];
+        Book book1 = new Book("자바의 정석" , "남궁석" , 35000);
+        book1.info();
 
-        b[0] = new Book();
-        b[0].title = "자바의 정석";
-        b[0].price = 20000;
+        Book book2 = new Book("수학의 정석" , "kim" , 31000);
+        book2.info();
 
-        b[1] = new Book();
-        b[1].title = "수학의 정석";
-        b[1].price = 15000;
-
-        b[2] = new Book();
-        b[2].title = "이것이자바다";
-        b[2].price = 30000;
+        Book book3 = new Book("국어의 정석" , "jim" , 29000);
+        book3.info();
 
 
-        BookPrint(b);
-    }
+        Book[] books = {book1 , book2 , book3};
 
-    static void BookPrint(Book[] books) {
-        for (Book book : books) {
-            System.out.println("제목:" + book.title + " 가격:" + book.price);
+        System.out.println("-----------------------");
+
+
+        if(book1.price > 30000){
+            System.out.println(book1.title);
+        }
+        if(book2.price > 30000){
+            System.out.println(book2.title);
+        }
+        if(book3.price > 30000){
+            System.out.println(book3.title);
+        }
+
+
         }
     }
-}
+
