@@ -1,14 +1,17 @@
-package 객체지향;
+package construct;
 
 public class Member {
     String name;
-    int age;
-    int registration;
+    String membership;
+    int payment;
 
-    void info(){
-        System.out.println("이름:" + name + ", 나이:" + age + ", 등록기간:" + registration);
+    Member(String name , String membership , int payment){
+        this.name = name;
+        this.membership = membership;
+        this.payment = payment;
+        }
+        void info(){
+            System.out.println("이름:" + name + " 등급:" + membership + " 결제금액:" + payment);
         }
     }
-
-
 

@@ -1,32 +1,37 @@
-package 객체지향;
+package construct;
 
-public class MemberMain{
+public class MemberMain {
     public static void main(String[] args) {
-        Member[] m = new Member[3];
+        Member member1 = new Member("도윤", "VIP", 30000);
+        member1.info();
 
-        m[0] = new Member();
-        m[0].name = "이도윤";
-        m[0].age = 27;
-        m[0].registration = 3;
-        m[0].info();
+        Member member2 = new Member("철수", "VIP", 40000);
+        member2.info();
 
-        m[1] = new Member();
-        m[1].name = "홍길동";
-        m[1].age = 24;
-        m[1].registration = 2;
-        m[1].info();
+        Member member3 = new Member("유리", "일반", 30000);
+        member3.info();
 
-        m[2] = new Member();
-        m[2].name = "이순신";
-        m[2].age = 23;
-        m[2].registration = 1;
-        m[2].info();
+        Member member4 = new Member("훈이", "VIP", 30000);
+        member4.info();
 
-        for(int i = 0 ; i < 3; i++){
-            if(m[i].registration >= 3){
-                System.out.println("등록된 사람:" + m[i].name);
+        Member[] members = {member1, member2, member3, member4};
+
+
+        System.out.println("-----------------------------");
+
+        int total = 0;
+        total += member1.payment + member2.payment + member3.payment + member4.payment;
+        System.out.println("총 결제 금액:" + total);
+
+        System.out.println("-----------------------------");
+
+
+        for (Member member : members) {
+            if (member.membership == "VIP")//if (member.membership.equals("VIP")) {
+                System.out.println("VIP 회원 목록:" + member.name);
             }
-        }
 
+        }
     }
 }
+
