@@ -1,41 +1,26 @@
-package ClassMatter;
+package staticMatter;
 
 public class StudentMain {
     public static void main(String[] args) {
-        Student[] students = new Student[3];
+        Student student1 = new Student("도윤", 70, 80);
 
-        Student s1 = new Student();
+        Student student2 = new Student("영진", 60, 70);
 
-        s1.name = "도윤";
-        s1.kor = 90;
-        s1.eng = 85;
-        s1.math = 95;
-        students[0] = s1;
+        Student student3 = new Student("철진", 50, 50);
 
-        Student s2 = new Student();
+        System.out.println("전체 학생 수 : " + Student.totalStudent);
+        System.out.println("도윤의 총점 : " + student1.getTotalScore());
+        System.out.println("영진의 총점 : " + student2.getTotalScore());
+        System.out.println("철진의 총점 : " + student3.getTotalScore());
 
-        s2.name = "철수";
-        s2.kor = 80;
-        s2.eng = 70;
-        s2.math = 75;
-        students[1] = s2;
+        Student[] students = {student1 , student2 , student3};
 
-        Student s3 = new Student();
-
-        s3.name = "영희";
-        s3.kor = 100;
-        s3.eng = 100;
-        s3.math = 100;
-        students[2] = s3;
-
-
-       for(Student student : students){
-           double avg = (student.kor + student.eng + student.math) / 3.0;
-           System.out.println("이름:" + student.name + " 평균:" + avg);
-
-       }
-
-
+        double totalScore = 0;
+        for (Student student : students) {
+            totalScore += student.getTotalScore();
+        }
+        double avg = totalScore / students.length;
+        System.out.println("평균 : " + avg);
 
     }
 }
