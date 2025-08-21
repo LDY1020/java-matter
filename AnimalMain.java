@@ -1,12 +1,12 @@
-package 객체지향;
+package access;
 
 public class AnimalMain {
-    public static void main(String[] args) {
-        Animal a = new Animal();
 
-        a.name = "초코";
-        a.age = 10;
-        a.type = "강아지";
-        a.introduce();
+    public static void main(String[] args) {
+        Dog dog = new Dog("초코" , "멍멍");
+        Cat cat = new Cat("냥이" , "야옹");
+
+        dog.printInfo();
+        cat.printInfo();
     }
 }

@@ -1,12 +1,14 @@
-package 객체지향;
+package access;
 
 public class Animal {
-    String name;
-    String type;
-    int age;
 
+    public String name;
 
-    void introduce(){
-        System.out.println("이름:" + name + ", 종류:" + type + ", 나이:" + age);
+    public Animal(String name){
+        this.name = name;
+    }
+
+    public void printInfo(){
+        System.out.println("이름:" + name);
     }
 }
