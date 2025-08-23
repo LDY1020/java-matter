@@ -1,12 +1,21 @@
-package access.access2;
+package poly.poly3;
 
 public class VehicleMain {
 
     public static void main(String[] args) {
-        Bike bike = new Bike("MTB" , 30 , "산악자전거");
-        Car car = new Car("소나타" , 120  , "휘발유");
+        Vehicle[] vehicles = {new Bus() , new AIrplane() , new Train() , new Vehicle()};
 
-        bike.printInfo();
-        car.printInfo();
+        for (Vehicle vehicle : vehicles) {
+            vehicle.move();
+            if(vehicle instanceof Bus){
+                Bus bus = (Bus) vehicle;
+                bus.tapCard();
+            }else if(vehicle instanceof Train){
+                Train train = (Train) vehicle;
+                train.reservaSeat();
+            }
+        }
+
     }
+
 }
