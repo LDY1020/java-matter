@@ -1,14 +1,8 @@
-package access;
+package poly;
 
 public class Animal {
 
-    public String name;
-
-    public Animal(String name){
-        this.name = name;
-    }
-
-    public void printInfo(){
-        System.out.println("이름:" + name);
+    public void sound(){
+        System.out.println("동물 소리를 낸다");
     }
 }

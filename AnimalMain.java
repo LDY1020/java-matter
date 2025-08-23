@@ -1,12 +1,13 @@
-package access;
+package poly;
 
 public class AnimalMain {
 
     public static void main(String[] args) {
-        Dog dog = new Dog("초코" , "멍멍");
-        Cat cat = new Cat("냥이" , "야옹");
+        Animal[] animals = {new Dog() , new Cat() , new Dog()};
 
-        dog.printInfo();
-        cat.printInfo();
+        for (Animal animal : animals) {
+            animal.sound();;
+
+        }
     }
 }

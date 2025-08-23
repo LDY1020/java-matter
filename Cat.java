@@ -1,17 +1,9 @@
-package access;
+package poly;
 
 public class Cat extends Animal{
 
-    public String sound;
-
-   public Cat(String name ,  String sound){
-        super(name);
-        this.sound = sound;
-    }
-
     @Override
-    public void printInfo(){
-        super.printInfo();
-        System.out.println(" - 소리:" + sound);
+    public void sound(){
+        System.out.println("야옹!");
     }
 }
